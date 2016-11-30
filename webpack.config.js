@@ -28,18 +28,14 @@ module.exports = {
        {
          test: /\.jsx?$/,
          exclude: /(node_modules)/,
-         loaders: ['react-hot', 'babel']
+         loaders: ['react-hot', 'babel?presets=es2015']
        },
        {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader')
+        test: /\.s?css$/,
+        loader: ExtractTextPlugin.extract('css-loader!postcss-loader!sass-loader')
        },
        {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
-       },
-       {
-        test: /\.(svg|png|jpe?g|gif|ico|svg)$/,
+        test: /\.(svg|png|jpe?g|gif|ico)$/,
         loader: 'file-loader?name=assets/images/[name].[ext]'
        },
        {
